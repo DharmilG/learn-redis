@@ -1,0 +1,1 @@
+export const redis_clinet = new Redis(process.env.URL_REDIS || 'redis://localhost:6379');
