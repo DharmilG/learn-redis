@@ -17,7 +17,7 @@ app.post('/send-otp', async (req, res) => {
     const {phone} = req.body;
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
 
-    await redis.set(otpKey(phone), otp, 'EX', 20); // OTP expires in 10 seconds
+    await redis.set(otpKey(phone), otp, 'EX', 30); // OTP expires in 30 seconds
     res.json({message: 'OTP sent successfully', otp: otp})
 });
 
